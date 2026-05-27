@@ -22,7 +22,7 @@ class RetailSupportAgent:
         text = user_message.lower()
         estimated_tokens = self._estimate_tokens(user_message)
 
-        if any(word in text for word in ["status", "rastreio", "entrega", "pedido"]):
+        if any(word in text for word in ["status", "rastreio", "entrega", "pedido", "atraso", "encomenda", "chegou"]):
             return AgentResponse(
                 intent="order_status",
                 action="check_order_status",
@@ -31,7 +31,7 @@ class RetailSupportAgent:
                 estimated_tokens=estimated_tokens + 45,
             )
 
-        if any(word in text for word in ["reembolso", "devolver", "dinheiro", "cancelar"]):
+        if any(word in text for word in ["reembolso", "devolver", "dinheiro", "cancelar", "defeito", "quebrado", "troca"]):
             return AgentResponse(
                 intent="refund",
                 action="start_refund_process",
@@ -40,7 +40,7 @@ class RetailSupportAgent:
                 estimated_tokens=estimated_tokens + 70,
             )
 
-        if any(word in text for word in ["endereco", "endereço", "mudar", "alterar"]):
+        if any(word in text for word in ["endereco", "endereço", "mudar", "alterar", "local", "onde", "entregar"]):
             return AgentResponse(
                 intent="change_address",
                 action="update_delivery_address",

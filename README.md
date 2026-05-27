@@ -70,13 +70,13 @@ pip install -r requirements.txt
 ### 4. Executar o benchmark
 
 ```bash
-python src/run_benchmark.py
+python -m src.run_benchmark
 ```
 
 ### 5. Rodar os testes
 
 ```bash
-pytest
+python -m pytest
 ```
 
 ## Saídas Geradas
