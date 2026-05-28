@@ -97,6 +97,32 @@ Após a execução, o programa gera arquivos na pasta `results/`:
 | Average Latency | Tempo médio de execução |
 | Estimated Cost | Custo estimado com base em tokens simulados |
 
+## Arquitetura Simplificada
+
+O protótipo segue um fluxo simples de avaliação:
+
+```text
+Cenários de teste -> Agente -> Resposta prevista -> Avaliador -> Métricas -> Resultados
+```
+
+
+Essa estrutura permite avaliar o comportamento do agente em diferentes entradas sem depender de APIs externas. Assim, o grupo consegue demonstrar o conceito de benchmark de forma controlada, reprodutível e com baixo custo.
+
+## Exemplo de Resultado Esperado
+
+Ao executar o benchmark, o sistema apresenta um resumo semelhante a:
+
+```json
+{
+  "total_scenarios": 11,
+  "success_rate": 1.0,
+  "success_percentage": 100.0,
+  "robustness_score": 1.0,
+  "average_turns": 1.8,
+  "total_estimated_tokens": 650
+}
+```
+
 ## Integrantes e Responsabilidades
 
 | Integrante | Responsabilidade |
