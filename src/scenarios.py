@@ -47,4 +47,23 @@ SCENARIOS = [
         "expected_intent": "order_status",
         "type": "ambiguous",
     },
+    
+    {
+        "id": "S09",
+        "message": "Minha encomenda esta atrasada.",
+        "expected_intent": "order_status",
+        "type": "normal",
+    },
+    {
+        "id": "510",
+        "message": "O produto chegou quebrado e quero resolver.",
+        "expected_intent": "refund",
+        "type": "normal",
+    },
+    {
+        "id": "S11",
+        "message": "Quero alterar o local da entrega.",
+        "expected_intent": "change_address",
+        "type": "normal",
+    },
 ]
