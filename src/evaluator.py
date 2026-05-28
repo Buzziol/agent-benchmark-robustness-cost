@@ -43,10 +43,13 @@ def estimate_cost(tokens: int) -> float:
 
 def summarize_results(df: pd.DataFrame) -> Dict:
     ambiguous = df[df["scenario_type"] == "ambiguous"]
+    
+    success_rate = float(df["success"].mean())
 
     return {
         "total_scenarios": int(len(df)),
-        "success_rate": round(float(df["success"].mean()), 4),
+        "success_rate": round(success_rate, 4),
+        "success_percentage": round(success_rate * 100, 2),
         "robustness_score": round(float(ambiguous["success"].mean()), 4)
         if len(ambiguous) > 0
         else None,
